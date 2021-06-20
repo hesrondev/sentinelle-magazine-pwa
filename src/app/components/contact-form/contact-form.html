@@ -1,0 +1,15 @@
+<div class="form-wrapper" class="ion-padding ion-text-center">
+
+  <h3 class="title">Get in touch</h3>
+
+  <form [formGroup]="contactForm">
+    <input type="text" placeholder="NAME" class="input-custom" formControlName="name">
+    <input type="email" placeholder="EMAIL" class="input-custom" formControlName="email">
+    <input type="text" placeholder="SUBJECT" class="input-custom" formControlName="subject">
+    <textarea type="text" placeholder="MESSAGE" class="input-custom textarea" rows="5"  formControlName="message"></textarea>
+
+    <button class="btn-custom btn-block" [disabled]="!contactForm.valid" (click)="sendContactForm()">
+      Send
+    </button>
+  </form>
+</div>

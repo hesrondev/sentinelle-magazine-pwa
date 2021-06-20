@@ -1,0 +1,79 @@
+<ion-header>
+
+  <ion-toolbar class="header">
+    <ion-title class="stnl-logo">SENTINELLE</ion-title>
+  </ion-toolbar>
+
+  <ion-grid class="submenu">
+    <ion-row class="submenu-row">
+      <ion-col class="submenu-col submenu-col-active" [class.submenu-col-active]="selectedIndex===0"
+        (click)="changeIndex(0)">
+        <span class="submenu-label">Teaser</span>
+      </ion-col>
+      <ion-col class="submenu-col" [class.submenu-col-active]="selectedIndex===1" (click)="changeIndex(1)">
+        <span class="submenu-label">Contact</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-header>
+
+<ion-content class="content-wrapper">
+  <div>
+    <div class="motif-space">
+      <img src="../../assets/imgs/motif-header.png" alt="">
+    </div>
+
+    <!-- Teaser -->
+    <div *ngIf="selectedIndex===0">
+
+      <div class="responsive-video">
+        <!-- <iframe *ngIf="displayVideo" src="https://drive.google.com/file/d/1ErlLMRdaSIonrTafwTmr-_lqVASkixpH/view?usp=sharing" class="teaser-frame" frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe> -->
+
+          <!-- <iframe src="https://player.vimeo.com/video/565251391" class="teaser-frame" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe> -->
+          <iframe src="https://player.vimeo.com/video/565251391" class="teaser-frame" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          <!-- Cover image -->
+          <!-- <img *ngIf="!displayVideo" src="../../assets/imgs/Imagecouv2.jpg" class="teaser-frame" (click)="playVideo()"> -->
+          <!-- Play button -->
+          <!-- <ion-icon *ngIf="!displayVideo" name="play" class="tsr-play" (click)="playVideo()"></ion-icon> -->
+
+      </div>
+
+      <div class="ion-padding">
+        <br>
+        <br>
+
+        <div class="form-wrapper" class="ion-padding">
+          <form [formGroup]="joinForm">
+            <input type="text" placeholder="FULL NAME" class="input-custom" formControlName="name">
+            <input type="text" placeholder="EMAIL" class="input-custom" formControlName="email">
+            <button class="btn-custom btn-block" [disabled]="!joinForm.valid" (click)="sendForm()">
+              Join our community
+            </button>
+          </form>
+        </div>
+
+        <!-- Social icons -->
+        <div class="icons-container ion-text-center">
+          <span class="getintouch">Get in touch :</span>
+          <app-social-icons orientation="horizontal"></app-social-icons>
+        </div>
+
+
+      </div>
+
+    </div>
+
+    <!-- Contact form -->
+    <div *ngIf="selectedIndex===1" class="ion-padding">
+      <app-contact-form></app-contact-form>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+</ion-content>

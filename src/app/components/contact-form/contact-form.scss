@@ -1,0 +1,62 @@
+  .title {
+    font-family: "Didonesque";
+    font-size: 2rem;
+    color: var(--ion-color-stnl-white);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+
+  .input-custom {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--ion-color-stnl-white);
+    border-radius: 0 !important;
+    font-size: 14px;
+    background-color: var(--ion-color-stnl-white) !important;
+    font-family: century-gothic, sans-serif;
+    color: var(--ion-color-stnl-black) !important;
+    font-weight: bold;
+    height: 45px;
+    padding-left: 16px;
+    padding-right: 16px;
+    max-width: 480px !important;
+    margin: 0 auto;
+    margin-bottom: 10px;
+
+  }
+
+  .input-custom::placeholder {
+    font-family: century-gothic, sans-serif;
+    color: rgba(var(--ion-color-stnl-black), $alpha: 0.9) !important;
+    letter-spacing: 0.08em;
+
+  }
+
+  .textarea {
+    min-height: 150px;
+    max-width: 300px;
+    padding: 16px;
+  }
+
+  .btn-custom {
+    font-family: century-gothic, sans-serif;
+    font-weight: 700;
+    display: block;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    max-width: 480px !important;
+    margin: 0 auto;
+    text-transform: uppercase;
+  }
+
+  .form-wrapper {
+    text-align: center;
+    padding-top: 16px;
+    padding-bottom: 24px;
+  }
+

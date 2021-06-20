@@ -3,9 +3,13 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'folder/Inbox',
+    path: '**',
+    redirectTo: 'landing-page',
     pathMatch: 'full'
+  },
+  {
+    path: 'landing-page',
+    loadChildren: () => import('./landing/landing.module').then( m => m.LandingPageModule)
   },
   {
     path: 'folder/:id',
