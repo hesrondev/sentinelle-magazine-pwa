@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastController } from '@ionic/angular';
+import { ContactService } from 'src/app/services/contact.service';
 
 /**
  * Generated class for the ContactFormComponent component.
@@ -17,7 +18,8 @@ export class ContactFormComponent {
 
   contactForm: FormGroup;
 
-  constructor(public toastCtrl: ToastController, private fb: FormBuilder) {
+  constructor(public toastCtrl: ToastController, private fb: FormBuilder,
+    public contactSrv: ContactService) {
     this.createForm();
   }
 
@@ -37,8 +39,15 @@ export class ContactFormComponent {
    * Send info to server
    */
   sendContactForm() {
-    this.contactForm.reset();
-    this.presentToast();
+
+    this.contactSrv.sendJoinInfo(this.contactForm.value).subscribe((res: any) => {
+
+      this.contactForm.reset();
+      this.presentToast();
+
+    }, error => {
+
+    });
   }
 
   /**

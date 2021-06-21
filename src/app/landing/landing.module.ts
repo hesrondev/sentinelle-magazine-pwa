@@ -9,6 +9,7 @@ import { LandingPageRoutingModule } from './landing-routing.module';
 import { LandingPage } from './landing.page';
 import { ComponentsModule } from '../components/components.module';
 import { WelcomeComponent } from '../components/welcome/welcome';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { WelcomeComponent } from '../components/welcome/welcome';
     IonicModule,
     LandingPageRoutingModule,
     ReactiveFormsModule,
-    ComponentsModule
+    ComponentsModule,
+    HttpClientModule,
   ],
   declarations: [
     LandingPage

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalController, ToastController } from '@ionic/angular';
 import { WelcomeComponent } from '../components/welcome/welcome';
+import { ContactService } from '../services/contact.service';
 
 @Component({
   selector: 'app-landing',
@@ -13,22 +14,16 @@ export class LandingPage implements OnInit {
   selectedIndex: number;
   joinForm: FormGroup;
 
-  displayVideo = false;
-
   constructor(public toastCtrl: ToastController,
     private fb: FormBuilder,
-    public modalCtrl: ModalController) {
+    public modalCtrl: ModalController,
+    public contactSrv: ContactService) {
     this.selectedIndex = 0;
     this.createForm();
   }
 
   ngOnInit() {
   }
-
-  playVideo() {
-    this.displayVideo = true;
-  }
-
 
   /**
    * Create join community form with builder
@@ -44,9 +39,13 @@ export class LandingPage implements OnInit {
    * Send info to server
    */
   sendForm() {
-    this.joinForm.reset();
-    this.presentModal();
-    // this.presentToast();
+
+    this.contactSrv.sendJoinInfo(this.joinForm.value).subscribe((res: any) => {
+      this.joinForm.reset();
+      this.presentModal();
+    }, error => {
+
+    });
   }
 
   changeIndex(index: number) {

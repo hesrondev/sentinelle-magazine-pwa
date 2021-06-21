@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  gtagTrackingCode: 'G-3BG5RREN00',
+  baseUrl: 'https://api.sentinelle-magazine.com'
+
 };
 
 /*
