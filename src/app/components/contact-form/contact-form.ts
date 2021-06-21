@@ -18,7 +18,8 @@ export class ContactFormComponent {
 
   contactForm: FormGroup;
 
-  constructor(public toastCtrl: ToastController, private fb: FormBuilder,
+  constructor(public toastCtrl: ToastController,
+    private fb: FormBuilder,
     public contactSrv: ContactService) {
     this.createForm();
   }
