@@ -39,8 +39,21 @@
         <br>
         <div class="form-wrapper" class="ion-padding">
           <form [formGroup]="joinForm">
+
+            <!-- Username -->
             <input type="text" placeholder="FULL NAME" class="input-custom" formControlName="name">
-            <input type="text" placeholder="EMAIL" class="input-custom" formControlName="email">
+            <div *ngIf="checkValidity('name')" class="alert">
+              <div *ngIf="joinForm.controls['name'].errors.required">
+                <small class="alert-text">Name required</small>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <input type="text" placeholder="EMAIL" class="input-custom email" formControlName="email">
+            <div *ngIf="checkValidity('email')" class="alert">
+                <small class="alert-text">Invalid email format (eg: john@email.com)</small>
+            </div>
+
             <button class="btn-custom btn-block" [disabled]="!joinForm.valid" (click)="sendForm()">
               Join our community
             </button>

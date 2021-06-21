@@ -23,7 +23,7 @@ export class AppComponent {
     // Check device
 
     if (!deviceSvc.isMobile()) {
-      window.location.href = 'https://sentinelle-magazine.com';
+      // window.location.href = 'https://sentinelle-magazine.com';
     }
 
     // Google analytics

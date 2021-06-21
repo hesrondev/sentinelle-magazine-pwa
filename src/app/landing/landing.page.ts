@@ -25,6 +25,11 @@ export class LandingPage implements OnInit {
   ngOnInit() {
   }
 
+  checkValidity(label: string) {
+    return this.joinForm.controls[label].invalid &&
+    (this.joinForm.controls[label].dirty || this.joinForm.controls[label].touched);
+  }
+
   /**
    * Create join community form with builder
    */

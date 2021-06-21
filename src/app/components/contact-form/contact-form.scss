@@ -30,8 +30,20 @@
     font-family: century-gothic, sans-serif;
     color: rgba(var(--ion-color-stnl-black), $alpha: 0.9) !important;
     letter-spacing: 0.08em;
-
+    text-transform: uppercase !important;
   }
+
+  .email {
+    text-transform: lowercase;
+  }
+  
+  .alert {
+    color: var(--ion-color-stnl-white);
+    margin: 0 auto;
+    margin-bottom: 10px;
+    max-width: 480px !important;
+    text-align: left !important;
+  }  
 
   .textarea {
     min-height: 150px;

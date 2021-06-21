@@ -3,10 +3,37 @@
   <h3 class="title">Get in touch</h3>
 
   <form [formGroup]="contactForm">
+
+    <!-- Name -->
     <input type="text" placeholder="NAME" class="input-custom" formControlName="name">
-    <input type="email" placeholder="EMAIL" class="input-custom" formControlName="email">
+    <div *ngIf="checkValidity('name')" class="alert">
+      <div *ngIf="contactForm.controls['name']?.errors?.required">
+        <small class="alert-text">Name required</small>
+      </div>
+    </div>
+
+    <!-- Email -->
+    <input type="email" placeholder="EMAIL" class="input-custom email" formControlName="email">
+    <div *ngIf="checkValidity('email')" class="alert">
+      <small class="alert-text">Invalid email format (eg: john@email.com)</small>
+    </div>
+
+    <!-- Subject -->
     <input type="text" placeholder="SUBJECT" class="input-custom" formControlName="subject">
-    <textarea type="text" placeholder="MESSAGE" class="input-custom textarea" rows="5"  formControlName="message"></textarea>
+    <div *ngIf="checkValidity('subject')" class="alert">
+      <div *ngIf="contactForm.controls['subject']?.errors?.required">
+        <small class="alert-text">Subject required</small>
+      </div>
+    </div>
+
+    <!-- Message -->
+    <textarea type="text" placeholder="MESSAGE" class="input-custom textarea" rows="5"
+      formControlName="message"></textarea>
+    <div *ngIf="checkValidity('message')" class="alert">
+      <div *ngIf="contactForm.controls['message']?.errors?.required">
+        <small class="alert-text">Message required</small>
+      </div>
+    </div>
 
     <button class="btn-custom btn-block" [disabled]="!contactForm.valid" (click)="sendContactForm()">
       Send

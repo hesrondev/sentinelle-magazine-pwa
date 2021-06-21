@@ -24,6 +24,11 @@ export class ContactFormComponent {
     this.createForm();
   }
 
+  checkValidity(label: string) {
+    return this.contactForm.controls[label].invalid &&
+      (this.contactForm.controls[label].dirty || this.contactForm.controls[label].touched);
+  }
+
   /**
    * Create contact form with builder
    */
@@ -42,10 +47,8 @@ export class ContactFormComponent {
   sendContactForm() {
 
     this.contactSrv.sendJoinInfo(this.contactForm.value).subscribe((res: any) => {
-
       this.contactForm.reset();
       this.presentToast();
-
     }, error => {
 
     });
