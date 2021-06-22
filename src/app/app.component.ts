@@ -22,8 +22,8 @@ export class AppComponent {
 
     // Check device
 
-    if (!deviceSvc.isMobile()) {
-      // window.location.href = 'https://sentinelle-magazine.com';
+    if (environment.production && !deviceSvc.isMobile()) {
+      window.location.href = environment.website;
     }
 
     // Google analytics

@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   gtagTrackingCode: 'G-3BG5RREN00',
-  baseUrl: 'https://api.sentinelle-magazine.com'
-
+  baseUrl: 'https://api.sentinelle-magazine.com',
+  website: 'https://sentinelle-magazine.com'
 };
 
 /*
