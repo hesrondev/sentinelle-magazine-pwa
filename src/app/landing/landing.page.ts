@@ -23,11 +23,12 @@ export class LandingPage implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
   checkValidity(label: string) {
     return this.joinForm.controls[label].invalid &&
-    (this.joinForm.controls[label].dirty || this.joinForm.controls[label].touched);
+      (this.joinForm.controls[label].dirty || this.joinForm.controls[label].touched);
   }
 
   /**
@@ -49,7 +50,7 @@ export class LandingPage implements OnInit {
       this.joinForm.reset();
       this.presentModal();
     }, error => {
-
+      this.presentToast(false);
     });
   }
 
@@ -65,6 +66,7 @@ export class LandingPage implements OnInit {
   async presentToast(success: boolean = true) {
     const toast = await this.toastCtrl.create({
       message: success ? 'Your request has been sent' : 'An error has occured, please retry later.',
+      color: success ? 'success' : 'warning',
       duration: 2000
     });
     toast.present();

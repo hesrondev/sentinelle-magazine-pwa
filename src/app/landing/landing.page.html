@@ -48,8 +48,8 @@
               </div>
             </div>
 
-            <!-- Email -->
-            <input type="text" placeholder="EMAIL" class="input-custom email" formControlName="email">
+            <!-- Email uses trim directive -->
+            <input type="text" placeholder="EMAIL" class="input-custom email" formControlName="email" trim />
             <div *ngIf="checkValidity('email')" class="alert">
                 <small class="alert-text">Invalid email format (eg: john@email.com)</small>
             </div>

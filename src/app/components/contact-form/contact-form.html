@@ -12,8 +12,8 @@
       </div>
     </div>
 
-    <!-- Email -->
-    <input type="email" placeholder="EMAIL" class="input-custom email" formControlName="email">
+    <!-- Email trim with directive-->
+    <input type="text" placeholder="EMAIL" class="input-custom email" formControlName="email" trim>
     <div *ngIf="checkValidity('email')" class="alert">
       <small class="alert-text">Invalid email format (eg: john@email.com)</small>
     </div>

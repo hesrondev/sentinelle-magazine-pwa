@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { ReactiveFormsModule } from '@angular/forms';
 import { WelcomeComponent } from './welcome/welcome';
 import { CommonModule } from '@angular/common';
+import { InputTrimModule } from 'ng2-trim-directive';
 @NgModule({
 	schemas: [
 		CUSTOM_ELEMENTS_SCHEMA
@@ -17,7 +18,8 @@ import { CommonModule } from '@angular/common';
 	imports: [
 		CommonModule,
 		IonicModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
+		InputTrimModule
 	],
 	exports: [
 		SocialIconsComponent,

@@ -48,9 +48,9 @@ export class ContactFormComponent {
 
     this.contactSrv.sendJoinInfo(this.contactForm.value).subscribe((res: any) => {
       this.contactForm.reset();
-      this.presentToast();
+      this.presentToast(true);
     }, error => {
-
+      this.presentToast(false);
     });
   }
 
@@ -60,6 +60,7 @@ export class ContactFormComponent {
   async presentToast(success: boolean = true) {
     const toast = await this.toastCtrl.create({
       message: success ? 'Your request has been sent' : 'An error has occured, please retry later.',
+      color: success ? 'success' : 'warning',
       duration: 2000
     });
     toast.present();

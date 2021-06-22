@@ -10,6 +10,7 @@ import { LandingPage } from './landing.page';
 import { ComponentsModule } from '../components/components.module';
 import { WelcomeComponent } from '../components/welcome/welcome';
 import { HttpClientModule } from '@angular/common/http';
+import { InputTrimModule } from 'ng2-trim-directive';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     ComponentsModule,
     HttpClientModule,
+    InputTrimModule
   ],
   declarations: [
     LandingPage
