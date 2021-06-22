@@ -1,8 +1,8 @@
 {
   "name": "sentinelle-mobile",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "Louange BIZI",
-  "homepage": "https://sentinelle-magazine.com/",
+  "homepage": "https://mobile.sentinelle-magazine.com/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
