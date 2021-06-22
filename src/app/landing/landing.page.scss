@@ -1,3 +1,13 @@
+/**
+* Variables
+*/
+
+$title-font-size: 3em;
+$title-font-size-sm: 2.4em;
+$title-font-size-xs: 1.8em;
+
+
+
 .header {
   padding: 16px;
   border: none !important;
@@ -8,17 +18,28 @@
 .stnl-logo {
   font-family: "Didonesque" !important;
   text-align: center;
-  font-size: 1.8em;
+  font-size: $title-font-size;
   letter-spacing: 0.05em;
   font-weight: normal;
-  text-overflow: clip;
+  padding-inline: inherit !important;
+}
+/* For small screens */
+
+@media only screen and (max-width: 376px) {
+  .stnl-logo {
+    font-size: $title-font-size-sm;
+  }
+}
+
+@media only screen and (max-width: 321px) {
+  .stnl-logo {
+    font-size: $title-font-size-xs;
+  }
 }
 
 .toolbar-title,
 .toolbar-title-ios,
 .toolbar-title-md {
-  font-size: 3rem !important;
-  text-overflow: clip !important;
   font-weight: normal;
   color: var(--ion-color-stnl-black);
 }
@@ -134,8 +155,6 @@
   margin: 0 auto;
   text-transform: uppercase;
 }
-
-
 
 /**
   */
