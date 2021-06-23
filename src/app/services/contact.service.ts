@@ -15,6 +15,6 @@ export class ContactService {
   }
 
   sendJoinInfo(data: any) {
-    return this.http.post(this.url + '/contact', data);
+    return this.http.post(this.url + '/contacts', data);
   }
 }
